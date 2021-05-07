@@ -1,0 +1,312 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+body {
+  font-family: "Alata", sans-serif;
+  font-size: 15px;
+  color: hsl(0, 0%, 100%);
+}
+
+.container-top {
+  height: 100vh;
+  background-image: url("assets/images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  header {
+    .overlay.active {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background: black;
+      z-index: 1;
+    }
+    .logo-burger {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      height: 10vh;
+      z-index: 2;
+
+      .burger {
+        margin-top: 3em;
+        margin-right: 2em;
+      }
+      .logo {
+        margin-top: 3em;
+        margin-left: 2em;
+      }
+    }
+
+    .nav-links {
+      display: none;
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      font-size: 2em;
+      padding: 3em 0;
+      list-style-type: none;
+      z-index: 2;
+      &.active {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+      }
+      li a {
+        text-decoration: none;
+        font-weight: 100;
+        margin-left: 1.5em;
+        color: white;
+      }
+    }
+  }
+
+  .headline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    h1 {
+      border: 2px solid white;
+      padding: 0.5em;
+      font-family: "Josefin Sans", Helvetica;
+      font-size: 3.5em;
+      margin: 0 0.5em;
+      font-weight: 300;
+      max-width: 500px;
+    }
+  }
+}
+
+@mixin imageText() {
+  position: absolute;
+  margin-left: 1em;
+  bottom: auto;
+}
+
+@mixin setBackground($path) {
+  position: relative;
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.6839110644257703) 0%,
+      rgba(0, 0, 0, 0.4542191876750701) 24%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    url($path);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  max-width: 100%;
+}
+
+.container-middle {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  .middle-top {
+    padding: 7em 1em;
+    text-align: center;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .middle-top-content {
+      h2 {
+        font-family: "Josefin Sans", Helvetica;
+        font-size: 2.3rem;
+        font-weight: 400;
+        color: black;
+        margin: 1em 0;
+        margin-bottom: 0.6em;
+        padding: 0 1em;
+      }
+      p {
+        line-height: 1.6;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: hsl(0, 0%, 50%);
+        margin: 0 3em;
+      }
+    }
+  }
+
+  .middle-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    button {
+      order: 2;
+      font-size: 1.2em;
+      color: black;
+      padding: 0.8em 2.7em;
+      border: 1px solid black;
+      font-weight: bold;
+      letter-spacing: 5px;
+      margin: 1.5em 0;
+    }
+
+    .image-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      width: 100vw;
+      margin: 1em 2em;
+      margin-left: 4em;
+      z-index: 1;
+
+      .deep-earth {
+        @include setBackground("assets/images/mobile/image-deep-earth.jpg");
+      }
+
+      .night-arcade {
+        @include setBackground("assets/images/mobile/image-night-arcade.jpg");
+      }
+
+      .soccer-team {
+        @include setBackground("assets/images/mobile/image-soccer-team.jpg");
+      }
+
+      .grid {
+        @include setBackground("assets/images/mobile/image-grid.jpg");
+      }
+
+      .from-above {
+        @include setBackground("assets/images/mobile/image-from-above.jpg");
+      }
+
+      .pocket-borealis {
+        @include setBackground(
+          "assets/images/mobile/image-pocket-borealis.jpg"
+        );
+      }
+
+      .curiosity {
+        @include setBackground("assets/images/mobile/image-curiosity.jpg");
+      }
+
+      .fisheye {
+        @include setBackground("assets/images/mobile/image-fisheye.jpg");
+      }
+
+      p {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 2.3rem;
+        @include imageText();
+        color: white;
+        line-height: 1;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+.container-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: black;
+  margin-top: 6em;
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .logo {
+      margin-top: 4.8em;
+      margin-bottom: 3em;
+      width: 60%;
+    }
+
+    .bottom-nav {
+      font-size: 1.1rem;
+      list-style-type: none;
+      text-align: center;
+      margin-bottom: 1.5em;
+      li {
+        margin-bottom: 1.5em;
+        a {
+          text-decoration: none;
+          color: hsl(0, 0%, 100%);
+        }
+      }
+    }
+
+    .icons {
+      display: flex;
+      list-style-type: none;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      li {
+        margin-right: 1.5em;
+        a img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 0.5em 0;
+      margin-bottom: 5em;
+      color: hsl(0, 0, 55%);
+    }
+  }
+}
+
+@media screen and (min-width: 742px) {
+  .container-top {
+    background: url("assets/images/desktop/image-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  header {
+    .logo-burger {
+      .burger {
+        visibility: hidden;
+      }
+    }
+
+    .nav-links {
+      display: none;
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      font-size: 2em;
+      padding: 3em 0;
+      list-style-type: none;
+      z-index: 2;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      li a {
+        text-decoration: none;
+        font-weight: 100;
+        margin-left: 1.5em;
+        color: white;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background: black;
+      z-index: 1;
+    }
+  }
+}
