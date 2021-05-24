@@ -16,7 +16,7 @@ body {
 
 .container-top {
   height: 100vh;
-  background-image: url("assets/images/mobile/image-hero.jpg");
+  background-image: url("../assets/images/mobile/image-hero.jpg");
   background-repeat: no-repeat;
   header {
     .overlay.active {
@@ -78,7 +78,6 @@ body {
       padding: 0.5em;
       font-family: "Josefin Sans", Helvetica;
       font-size: 3.5em;
-      margin: 0 0.5em;
       font-weight: 300;
       max-width: 500px;
     }
@@ -115,8 +114,10 @@ body {
     padding: 7em 1em;
     text-align: center;
     img {
+      position: relative;
       max-width: 100%;
       height: auto;
+      border: 1px solid black;
     }
     .middle-top-content {
       h2 {
@@ -166,37 +167,39 @@ body {
       z-index: 1;
 
       .deep-earth {
-        @include setBackground("assets/images/mobile/image-deep-earth.jpg");
+        @include setBackground("../assets/images/mobile/image-deep-earth.jpg");
       }
 
       .night-arcade {
-        @include setBackground("assets/images/mobile/image-night-arcade.jpg");
+        @include setBackground(
+          "../assets/images/mobile/image-night-arcade.jpg"
+        );
       }
 
       .soccer-team {
-        @include setBackground("assets/images/mobile/image-soccer-team.jpg");
+        @include setBackground("../assets/images/mobile/image-soccer-team.jpg");
       }
 
       .grid {
-        @include setBackground("assets/images/mobile/image-grid.jpg");
+        @include setBackground("../assets/images/mobile/image-grid.jpg");
       }
 
       .from-above {
-        @include setBackground("assets/images/mobile/image-from-above.jpg");
+        @include setBackground("../assets/images/mobile/image-from-above.jpg");
       }
 
       .pocket-borealis {
         @include setBackground(
-          "assets/images/mobile/image-pocket-borealis.jpg"
+          "../assets/images/mobile/image-pocket-borealis.jpg"
         );
       }
 
       .curiosity {
-        @include setBackground("assets/images/mobile/image-curiosity.jpg");
+        @include setBackground("../assets/images/mobile/image-curiosity.jpg");
       }
 
       .fisheye {
-        @include setBackground("assets/images/mobile/image-fisheye.jpg");
+        @include setBackground("../assets/images/mobile/image-fisheye.jpg");
       }
 
       p {
@@ -270,43 +273,97 @@ body {
 
 @media screen and (min-width: 742px) {
   .container-top {
-    background: url("assets/images/desktop/image-hero.jpg");
+    background: url("../assets/images/desktop/image-hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-  }
-  header {
-    .logo-burger {
-      .burger {
-        visibility: hidden;
-      }
-    }
-
-    .nav-links {
-      display: none;
-      position: relative;
-      height: 100vh;
-      width: 100vw;
-      font-size: 2em;
-      padding: 3em 0;
-      list-style-type: none;
-      z-index: 2;
+    header {
       display: flex;
-      justify-content: space-evenly;
-      flex-direction: column;
-      li a {
-        text-decoration: none;
-        font-weight: 100;
-        margin-left: 1.5em;
-        color: white;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      padding: 2em 5em;
+      padding-left: 9em;
+      border: 1px solid white;
+      .logo-burger {
+        .burger {
+          visibility: hidden;
+        }
+        .logo {
+          margin: 0;
+          width: auto;
+          height: 23px;
+          border: 1px solid tomato;
+          margin-left: 1em;
+        }
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: row;
+        height: 10%;
+        padding: 0;
+        padding-bottom: 0.5em;
+        margin: 0;
+        font-size: 2em;
+        list-style-type: none;
+        z-index: 2;
+        border: 1px solid lightblue;
+        li a {
+          font-size: 1rem;
+          text-decoration: none;
+          font-weight: 100;
+          color: white;
+        }
       }
     }
-
-    .overlay {
-      position: absolute;
-      height: 100vh;
-      width: 100vw;
-      background: black;
-      z-index: 1;
+    .headline {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      height: 80vh;
+      margin-left: 10em;
     }
+  }
+
+  .container-middle {
+    .middle-top {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7em 3em;
+      padding-bottom: 9em;
+      border: 1px solid black;
+      img {
+      }
+      .middle-top-content {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border: 1px solid tomato;
+        background: white;
+        width: 50%;
+        padding: 3em 5em;
+        margin-right: 2em;
+        text-align: left;
+
+        h2 {
+          padding: 0;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 742px) and (max-width: 960px) {
+  .middle-top-content {
+    margin: 0;
+    padding: 0;
   }
 }
