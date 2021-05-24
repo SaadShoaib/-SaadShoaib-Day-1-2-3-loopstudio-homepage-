@@ -391,7 +391,6 @@ body {
     width: 100vw;
     padding: 2em 5em;
     padding-left: 9em;
-    border: 1px solid white;
   }
   .container-top header .logo-burger .burger {
     visibility: hidden;
@@ -400,7 +399,6 @@ body {
     margin: 0;
     width: auto;
     height: 23px;
-    border: 1px solid tomato;
     margin-left: 1em;
   }
   .container-top header .nav-links {
@@ -424,7 +422,6 @@ body {
     font-size: 2em;
     list-style-type: none;
     z-index: 2;
-    border: 1px solid lightblue;
   }
   .container-top header .nav-links li a {
     font-size: 1rem;
@@ -460,18 +457,17 @@ body {
             align-items: center;
     padding: 7em 3em;
     padding-bottom: 9em;
-    border: 1px solid black;
   }
   .container-middle .middle-top .middle-top-content {
     position: absolute;
     right: 0;
     bottom: 0;
-    border: 1px solid tomato;
     background: white;
     width: 50%;
     padding: 3em 5em;
     margin-right: 2em;
     text-align: left;
+    max-height: 500px;
   }
   .container-middle .middle-top .middle-top-content h2 {
     padding: 0;
